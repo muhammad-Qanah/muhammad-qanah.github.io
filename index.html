@@ -131,13 +131,18 @@
       height: 120px;
       border-radius: 50%;
       border: 3px solid rgba(255,255,255,0.5);
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.6rem;
-      font-weight: 600;
-      letter-spacing: 2px;
+      overflow: hidden;
       background: rgba(255,255,255,0.1);
+    }
+    .cv-avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
     }
     .cv-hero-info { flex: 1; min-width: 240px; }
     .cv-hero-info h1 {
@@ -328,16 +333,21 @@
     [dir="rtl"] .cv-timeline-item::before { left: auto; right: -7px; }
     [dir="rtl"] .cv-timeline-item ul { padding-left: 0; padding-right: 18px; }
     @media print {
-      @page { size: A4; margin: 0; }
+      @page { size: auto; margin: 0; }
       body {
-        background: #fff;
-        padding: 0;
+        width: 1100px;
+        margin: 0 auto;
+        background: var(--bg-gradient);
+        padding: 32px 0 48px;
       }
       .cv-toolbar { display: none; }
       .cv-page {
+        width: 1100px;
+        max-width: 1100px;
+        min-height: auto;
         box-shadow: none;
-        border-radius: 0;
-        margin: 0;
+        border-radius: 24px;
+        margin: 0 auto 32px;
         page-break-after: always;
       }
     }
@@ -396,7 +406,9 @@
 
   <div id="cv-en" class="cv-page">
     <section class="cv-hero">
-      <div class="cv-avatar">MQ</div>
+      <div class="cv-avatar">
+        <img src="IMG_6888.jpeg" alt="Muhammad Qanah portrait">
+      </div>
       <div class="cv-hero-info">
         <h1><a href="https://muhammad-qanah.github.io/" target="_blank" rel="noreferrer" style="color:#fff;text-decoration:none;">Muhammad Qanah</a></h1>
         <p>Full Stack Software Engineer · Dubai, UAE</p>
@@ -439,6 +451,14 @@
         <section class="cv-card">
           <h3>Profile</h3>
           <p>Versatile Full Stack Software Engineer who turns ambitious product goals into pragmatic architecture. Over the last eight years I have scaled SaaS platforms, coached engineers at different levels, and removed delivery blockers before they surfaced. I thrive when shaping resilient systems, translating non-technical insights into code, and leaving every codebase healthier than I found it.</p>
+        </section>
+        <section class="cv-card">
+          <h3>Highlights</h3>
+          <ul class="cv-list">
+            <li>Scaled SaaS infrastructure to support 3x user growth without new hardware spend.</li>
+            <li>Cut mean time to recovery from 45 minutes to under 10 by adding observability playbooks.</li>
+            <li>Led vendor consolidation that reduced annual software costs by $120K.</li>
+          </ul>
         </section>
         <section class="cv-card">
           <h3>Work Experience</h3>
@@ -582,13 +602,23 @@
             </div>
           </div>
         </section>
+        <section class="cv-card">
+          <h3>Certifications & Tooling</h3>
+          <ul class="cv-list">
+            <li>AWS Certified Solutions Architect – Associate (2022)</li>
+            <li>Certified Kubernetes Application Developer (CKAD) (2023)</li>
+            <li>Tooling: Docker, Kubernetes, GitHub Actions, GitLab CI, Sentry, Datadog, Jira</li>
+          </ul>
+        </section>
       </aside>
     </div>
   </div>
 
   <div id="cv-ar" class="cv-page" dir="rtl">
     <section class="cv-hero">
-      <div class="cv-avatar">MQ</div>
+      <div class="cv-avatar">
+        <img src="IMG_6888.jpeg" alt="محمد قناه">
+      </div>
       <div class="cv-hero-info">
         <h1 style="font-family: 'Cairo', 'Tajawal', 'Amiri', 'Segoe UI', Arial, sans-serif;"><a href="https://muhammad-qanah.github.io/" target="_blank" rel="noreferrer" style="color:#fff;text-decoration:none;">محمد قناه</a></h1>
         <p>مهندس برمجيات متكامل · دبي، الإمارات</p>
@@ -631,6 +661,14 @@
         <section class="cv-card">
           <h3>الملف الشخصي</h3>
           <p>مهندس برمجيات متكامل متعدد المهارات يحول أهداف المنتج الطموحة إلى هندسة عملية. خلال أكثر من ثماني سنوات قمت بتوسيع منصات SaaS، وتوجيه مهندسين بمستويات مختلفة، وإزالة العوائق قبل أن تؤثر على التسليم. أعمل بأفضل صورة عند تصميم أنظمة مرنة، وترجمة رؤى العمل غير التقنية إلى كود واضح، وترك كل مشروع في حالة أفضل مما كان عليه.</p>
+        </section>
+        <section class="cv-card">
+          <h3>أبرز الإنجازات</h3>
+          <ul class="cv-list">
+            <li>توسيع البنية التحتية لمنصة SaaS لاستيعاب نمو المستخدمين بثلاثة أضعاف دون زيادة في الأجهزة.</li>
+            <li>خفض متوسط زمن الاستعادة من 45 دقيقة إلى أقل من 10 دقائق عبر أدلة المراقبة والاستجابة.</li>
+            <li>قيادة توحيد الموردين مما وفر 120 ألف دولار سنوياً في تكاليف البرمجيات.</li>
+          </ul>
         </section>
         <section class="cv-card">
           <h3>الخبرة العملية</h3>
@@ -773,6 +811,14 @@
               <div class="cv-meter-fill" style="width:80%;"></div>
             </div>
           </div>
+        </section>
+        <section class="cv-card">
+          <h3>الشهادات والأدوات</h3>
+          <ul class="cv-list">
+            <li>شهادة مهندس حلول معتمد من AWS – المستوى المشارك (2022)</li>
+            <li>مطور تطبيقات كوبرنيتس معتمد (CKAD) (2023)</li>
+            <li>أدوات: Docker، Kubernetes، GitHub Actions، GitLab CI، ‏Sentry، ‏Datadog، ‏Jira</li>
+          </ul>
         </section>
       </aside>
     </div>
