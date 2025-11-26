@@ -373,27 +373,38 @@
     @media print {
       @page { size: auto; margin: 0; }
       html, body {
-        width: 210mm;
+        width: 100%;
         min-height: 100%;
-        margin: 0 auto;
-        background: var(--bg-gradient);
-        padding: 32px 0 48px;
+        margin: 0;
+        background: #fff;
+        padding: 0;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
       .cv-toolbar { display: none; }
       .cv-page {
-        width: 210mm;
-        max-width: 210mm;
+        width: 100%;
+        max-width: none;
         min-height: auto;
         box-shadow: none;
-        border-radius: 24px;
-        margin: 0 auto 32px;
+        border-radius: 0;
+        margin: 0;
         page-break-after: always;
+      }
+      .cv-layout {
+        padding: 24px 24px 40px;
+      }
+      .cv-hero {
+        border-radius: 0;
       }
       .cv-hero,
       .cv-card {
         page-break-inside: avoid;
+        box-shadow: none;
+        border: none;
+      }
+      .cv-card {
+        background: #fff;
       }
     }
   </style>
@@ -486,7 +497,7 @@
           </div>
           <div class="cv-contact-item">
             <span>GitHub</span>
-            <a href="https://github.com/Muhammad_Qa" target="_blank" rel="noreferrer">https://github.com/Muhammad_Qa</a>
+            <a href="https://github.com/Muhammad-Qanah" target="_blank" rel="noreferrer">https://github.com/Muhammad-Qanah</a>
           </div>
         </div>
       </div>
@@ -701,7 +712,7 @@
           </div>
           <div class="cv-contact-item">
             <span>جيت هب</span>
-            <a href="https://github.com/Muhammad_Qa" target="_blank" rel="noreferrer">https://github.com/Muhammad_Qa</a>
+            <a href="https://github.com/Muhammad-Qanah" target="_blank" rel="noreferrer">https://github.com/Muhammad-Qanah</a>
           </div>
         </div>
       </div>
