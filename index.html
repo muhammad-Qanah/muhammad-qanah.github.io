@@ -274,10 +274,23 @@
       flex-wrap: wrap;
       gap: 8px;
     }
+    a {
+      color: var(--primary);
+      text-decoration: underline;
+      transition: color 0.2s ease;
+    }
+    a:hover { color: var(--primary-dark); }
     .cv-job-title {
       font-weight: 600;
       font-size: 1.05rem;
       color: var(--primary-dark);
+    }
+    .cv-job-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .cv-job-title a:hover {
+      text-decoration: underline;
     }
     .cv-org { color: var(--muted); font-size: 0.95rem; }
     .cv-date { font-weight: 600; color: var(--primary); }
@@ -359,21 +372,28 @@
     [dir="rtl"] .cv-timeline-item ul { padding-left: 0; padding-right: 18px; }
     @media print {
       @page { size: auto; margin: 0; }
-      body {
-        width: 1100px;
+      html, body {
+        width: 210mm;
+        min-height: 100%;
         margin: 0 auto;
         background: var(--bg-gradient);
         padding: 32px 0 48px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
       .cv-toolbar { display: none; }
       .cv-page {
-        width: 1100px;
-        max-width: 1100px;
+        width: 210mm;
+        max-width: 210mm;
         min-height: auto;
         box-shadow: none;
         border-radius: 24px;
         margin: 0 auto 32px;
         page-break-after: always;
+      }
+      .cv-hero,
+      .cv-card {
+        page-break-inside: avoid;
       }
     }
   </style>
@@ -462,11 +482,11 @@
           </div>
           <div class="cv-contact-item">
             <span>LinkedIn</span>
-            <a href="https://linkedin.com/in/muhammad-qanah" target="_blank" rel="noreferrer">muhammad-qanah</a>
+            <a href="https://linkedin.com/in/muhammad-qanah-135a29191" target="_blank" rel="noreferrer">https://linkedin.com/in/muhammad-qanah-135a29191</a>
           </div>
           <div class="cv-contact-item">
             <span>GitHub</span>
-            <a href="https://github.com/Muhammad-Qanah" target="_blank" rel="noreferrer">github.com/Muhammad-Qanah</a>
+            <a href="https://github.com/Muhammad_Qa" target="_blank" rel="noreferrer">https://github.com/Muhammad_Qa</a>
           </div>
         </div>
       </div>
@@ -506,60 +526,6 @@
               <div class="cv-timeline-header">
                 <div>
                   <div class="cv-job-title">Full Stack Developer</div>
-                  <div class="cv-org">Cooplus · Dubai</div>
-                </div>
-                <div class="cv-date">2021 – Present</div>
-              </div>
-              <ul>
-                <li>Refactored Laravel monolith services into modular APIs and Vue/Nuxt frontends that handle thousands of daily sessions.</li>
-                <li>Partnered with design and product to translate hypotheses into experiments that improved feature adoption by double digits.</li>
-                <li>Introduced observability dashboards and caching strategies that cut average response times under 200 ms.</li>
-              </ul>
-            </article>
-            <article class="cv-timeline-item">
-              <div class="cv-timeline-header">
-                <div>
-                  <div class="cv-job-title">Full Stack Developer</div>
-                  <div class="cv-org">Techno Web · Dubai</div>
-                </div>
-                <div class="cv-date">2020 – 2021</div>
-              </div>
-              <ul>
-                <li>Delivered bespoke portals and e-commerce builds using PHP, Yii, and Vue, adapting quickly to each client’s workflow.</li>
-                <li>Implemented proactive security reviews, accessibility passes, and load tests before handoff.</li>
-                <li>Established shared UI components with designers and PMs to shorten revision cycles.</li>
-              </ul>
-            </article>
-            <article class="cv-timeline-item">
-              <div class="cv-timeline-header">
-                <div>
-                  <div class="cv-job-title">Full Stack Developer</div>
-                  <div class="cv-org">Lunapact · Remote</div>
-                </div>
-                <div class="cv-date">2019 – 2020</div>
-              </div>
-              <ul>
-                <li>Coordinated across four time zones to launch features that aligned with complex regulatory requirements.</li>
-                <li>Built asynchronous APIs and integration layers so partners could extend the platform without touching core services.</li>
-              </ul>
-            </article>
-            <article class="cv-timeline-item">
-              <div class="cv-timeline-header">
-                <div>
-                  <div class="cv-job-title">Full Stack Developer</div>
-                  <div class="cv-org">Rouad Technologies · Dubai</div>
-                </div>
-                <div class="cv-date">04/2021 – 07/2023</div>
-              </div>
-              <ul>
-                <li>Audited legacy e-commerce stacks, replacing brittle payment and inventory modules with testable services.</li>
-                <li>Rolled out UX and performance enhancements that improved conversion and page speed metrics.</li>
-              </ul>
-            </article>
-            <article class="cv-timeline-item">
-              <div class="cv-timeline-header">
-                <div>
-                  <div class="cv-job-title">Full Stack Developer</div>
                   <div class="cv-org">City Of Gold · Dubai</div>
                 </div>
                 <div class="cv-date">07/2023 – 02/2024</div>
@@ -575,10 +541,77 @@
                   <div class="cv-job-title">Full Stack Developer</div>
                   <div class="cv-org">Majarra · Dubai</div>
                 </div>
-                <div class="cv-date">09/2020 – 03/2021</div>
+                <div class="cv-date">09/2020 – 07/2023</div>
               </div>
               <ul>
                 <li>Owned community engagement modules, including personalization rules that lifted retention metrics.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+        <section class="cv-card">
+          <h3>Projects</h3>
+          <div class="cv-timeline">
+            <article class="cv-timeline-item">
+              <div class="cv-timeline-header">
+                <div>
+                  <div class="cv-job-title"><a href="https://cooplus.ae/" target="_blank" rel="noreferrer">Cooplus Platform</a></div>
+                  <div class="cv-org"><a href="https://cooplus.ae/" target="_blank" rel="noreferrer">https://cooplus.ae/</a> · Dubai · 2021 – Present</div>
+                </div>
+              </div>
+              <ul>
+                <li>Refactored Laravel monolith services into modular APIs and Vue/Nuxt frontends that serve thousands of daily sessions.</li>
+                <li>Partnered with design and product to run experiments that increased feature adoption by double digits.</li>
+                <li>Introduced observability dashboards and caching strategies that kept responses under 200 ms.</li>
+              </ul>
+            </article>
+            <article class="cv-timeline-item">
+              <div class="cv-timeline-header">
+                <div>
+                  <div class="cv-job-title"><a href="https://web.techno.ae/" target="_blank" rel="noreferrer">Techno Web Commerce Suite</a></div>
+                  <div class="cv-org"><a href="https://web.techno.ae/" target="_blank" rel="noreferrer">https://web.techno.ae/</a> · Dubai · 2020 – 2021</div>
+                </div>
+              </div>
+              <ul>
+                <li>Delivered bespoke portals and e-commerce builds using PHP, Yii, and Vue tailored to each client workflow.</li>
+                <li>Implemented proactive security reviews, accessibility passes, and load testing before launch.</li>
+                <li>Established shared UI components with designers and PMs to shorten revision cycles.</li>
+              </ul>
+            </article>
+            <article class="cv-timeline-item">
+              <div class="cv-timeline-header">
+                <div>
+                  <div class="cv-job-title"><a href="https://lunapact.com/" target="_blank" rel="noreferrer">Lunapact Integrations</a></div>
+                  <div class="cv-org"><a href="https://lunapact.com/" target="_blank" rel="noreferrer">https://lunapact.com/</a> · Remote · 2019 – 2020</div>
+                </div>
+              </div>
+              <ul>
+                <li>Coordinated across four time zones to ship features meeting strict compliance requirements.</li>
+                <li>Built asynchronous APIs and integration layers so partners could extend the platform safely.</li>
+              </ul>
+            </article>
+            <article class="cv-timeline-item">
+              <div class="cv-timeline-header">
+                <div>
+                  <div class="cv-job-title"><a href="https://rouadtech.com/" target="_blank" rel="noreferrer">Rouad Commerce Modernization</a></div>
+                  <div class="cv-org"><a href="https://rouadtech.com/" target="_blank" rel="noreferrer">https://rouadtech.com/</a> · Dubai · 04/2021 – 07/2023</div>
+                </div>
+              </div>
+              <ul>
+                <li>Audited legacy e-commerce stacks and replaced brittle payment and inventory modules with testable services.</li>
+                <li>Rolled out UX and performance enhancements that improved conversion and page speed metrics.</li>
+              </ul>
+            </article>
+            <article class="cv-timeline-item">
+              <div class="cv-timeline-header">
+                <div>
+                  <div class="cv-job-title"><a href="https://hbrarabic.com/" target="_blank" rel="noreferrer">HBR Arabia Digital Experience</a></div>
+                  <div class="cv-org"><a href="https://hbrarabic.com/" target="_blank" rel="noreferrer">hbrarabic.com</a> · 2022</div>
+                </div>
+              </div>
+              <ul>
+                <li>Implemented custom publishing workflows and localization-ready components for the Arabic edition of Harvard Business Review.</li>
+                <li>Optimized article rendering and caching to ensure fast loads for long-form editorial content.</li>
               </ul>
             </article>
           </div>
@@ -597,14 +630,6 @@
           <div class="cv-tag-grid">
             <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span><span>Python</span><span>Java</span><span>Golang</span><span>Laravel</span><span>Yii</span><span>Vue.js</span><span>React</span><span>Spring Boot</span><span>SQL/MySQL</span><span>Git</span>
           </div>
-        </section>
-        <section class="cv-card">
-          <h3>Projects</h3>
-          <ul class="cv-list cv-projects">
-            <li><strong>Cooplus</strong> – <a href="https://cooplus.ae/" target="_blank" rel="noreferrer">cooplus.ae</a></li>
-            <li><strong>Techno Web</strong> – <a href="https://web.techno.ae/" target="_blank" rel="noreferrer">web.techno.ae</a></li>
-            <li><strong>Lunapact</strong> – <a href="https://lunapact.com/" target="_blank" rel="noreferrer">lunapact.com</a></li>
-          </ul>
         </section>
         <section class="cv-card">
           <h3>Education</h3>
@@ -672,11 +697,11 @@
           </div>
           <div class="cv-contact-item">
             <span>لينكدإن</span>
-            <a href="https://linkedin.com/in/muhammad-qanah" target="_blank" rel="noreferrer">linkedin.com/in/muhammad-qanah</a>
+            <a href="https://linkedin.com/in/muhammad-qanah-135a29191" target="_blank" rel="noreferrer">https://linkedin.com/in/muhammad-qanah-135a29191</a>
           </div>
           <div class="cv-contact-item">
             <span>جيت هب</span>
-            <a href="https://github.com/Muhammad-Qanah" target="_blank" rel="noreferrer">github.com/Muhammad-Qanah</a>
+            <a href="https://github.com/Muhammad_Qa" target="_blank" rel="noreferrer">https://github.com/Muhammad_Qa</a>
           </div>
         </div>
       </div>
@@ -716,60 +741,6 @@
               <div class="cv-timeline-header">
                 <div>
                   <div class="cv-job-title">مطور برمجيات متكامل</div>
-                  <div class="cv-org">Cooplus · دبي</div>
-                </div>
-                <div class="cv-date">2021 – الآن</div>
-              </div>
-              <ul>
-                <li>إعادة هيكلة خدمات Laravel إلى واجهات برمجية معيارية مع واجهات Vue/Nuxt تخدم آلاف الجلسات يومياً.</li>
-                <li>العمل جنباً إلى جنب مع فرق المنتج والتصميم لتحويل الفرضيات إلى تجارب رفعت تبني الميزات بنسب مزدوجة.</li>
-                <li>إطلاق لوحات مراقبة واستراتيجيات تخزين مؤقت خفّضت زمن الاستجابة إلى أقل من 200 مللي ثانية.</li>
-              </ul>
-            </article>
-            <article class="cv-timeline-item">
-              <div class="cv-timeline-header">
-                <div>
-                  <div class="cv-job-title">مطور برمجيات متكامل</div>
-                  <div class="cv-org">Techno Web · دبي</div>
-                </div>
-                <div class="cv-date">2020 – 2021</div>
-              </div>
-              <ul>
-                <li>تسليم بوابات وتطبيقات تجارة إلكترونية مصممة خصيصاً باستخدام PHP وYii وVue حسب احتياج كل عميل.</li>
-                <li>تنفيذ مراجعات أمنية، وفحوصات وصول، واختبارات تحميل قبل التسليم.</li>
-                <li>إنشاء مكتبة مكونات واجهة مع المصممين ومديري المشاريع لتقليل دورات المراجعة.</li>
-              </ul>
-            </article>
-            <article class="cv-timeline-item">
-              <div class="cv-timeline-header">
-                <div>
-                  <div class="cv-job-title">مطور برمجيات متكامل</div>
-                  <div class="cv-org">Lunapact · عن بعد</div>
-                </div>
-                <div class="cv-date">2019 – 2020</div>
-              </div>
-              <ul>
-                <li>التنسيق مع فريق موزع على أربع مناطق زمنية لإطلاق ميزات تتوافق مع متطلبات تنظيمية معقدة.</li>
-                <li>بناء واجهات برمجة غير متزامنة وطبقات تكامل تسمح للشركاء بتوسعة المنصة دون المساس بالخدمات الأساسية.</li>
-              </ul>
-            </article>
-            <article class="cv-timeline-item">
-              <div class="cv-timeline-header">
-                <div>
-                  <div class="cv-job-title">مطور برمجيات متكامل</div>
-                  <div class="cv-org">رواد تكنولوجيز · دبي</div>
-                </div>
-                <div class="cv-date">04/2021 – 07/2023</div>
-              </div>
-              <ul>
-                <li>مراجعة الأنظمة القديمة واستبدال وحدات الدفع والمخزون الهشة بخدمات قابلة للاختبار.</li>
-                <li>تطبيق تحسينات في تجربة المستخدم والأداء رفعت معدلات التحويل وسرعة الصفحات.</li>
-              </ul>
-            </article>
-            <article class="cv-timeline-item">
-              <div class="cv-timeline-header">
-                <div>
-                  <div class="cv-job-title">مطور برمجيات متكامل</div>
                   <div class="cv-org">سيتي أوف جولد · دبي</div>
                 </div>
                 <div class="cv-date">07/2023 – 02/2024</div>
@@ -785,10 +756,77 @@
                   <div class="cv-job-title">مطور برمجيات متكامل</div>
                   <div class="cv-org">مجرة · دبي</div>
                 </div>
-                <div class="cv-date">09/2020 – 03/2021</div>
+                <div class="cv-date">09/2020 – 07/2023</div>
               </div>
               <ul>
                 <li>قيادة وحدات التفاعل في مجتمع رقمي، بما في ذلك قواعد التخصيص التي حسّنت الاحتفاظ بالمستخدمين.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+        <section class="cv-card">
+          <h3>المشاريع</h3>
+          <div class="cv-timeline">
+            <article class="cv-timeline-item">
+              <div class="cv-timeline-header">
+                <div>
+                  <div class="cv-job-title"><a href="https://cooplus.ae/" target="_blank" rel="noreferrer">منصة Cooplus</a></div>
+                  <div class="cv-org"><a href="https://cooplus.ae/" target="_blank" rel="noreferrer">https://cooplus.ae/</a> · دبي · 2021 – الآن</div>
+                </div>
+              </div>
+              <ul>
+                <li>إعادة بناء خدمات Laravel إلى واجهات برمجية معيارية مع واجهات Vue/Nuxt تخدم آلاف الجلسات يومياً.</li>
+                <li>التعاون مع فرق المنتج والتصميم لإطلاق تجارب رفعت تبني الميزات بنسب مزدوجة.</li>
+                <li>إطلاق لوحات مراقبة واستراتيجيات تخزين مؤقت حافظت على زمن الاستجابة تحت 200 مللي ثانية.</li>
+              </ul>
+            </article>
+            <article class="cv-timeline-item">
+              <div class="cv-timeline-header">
+                <div>
+                  <div class="cv-job-title"><a href="https://web.techno.ae/" target="_blank" rel="noreferrer">حلول Techno Web للتجارة</a></div>
+                  <div class="cv-org"><a href="https://web.techno.ae/" target="_blank" rel="noreferrer">https://web.techno.ae/</a> · دبي · 2020 – 2021</div>
+                </div>
+              </div>
+              <ul>
+                <li>تسليم بوابات وتطبيقات تجارة إلكترونية باستخدام PHP وYii وVue بما يتناسب مع احتياجات كل عميل.</li>
+                <li>تنفيذ مراجعات أمنية وفحوصات وصول واختبارات تحميل قبل الإطلاق.</li>
+                <li>إنشاء مكتبة مكونات واجهة مع المصممين ومديري المشاريع لتقليل دورات المراجعة.</li>
+              </ul>
+            </article>
+            <article class="cv-timeline-item">
+              <div class="cv-timeline-header">
+                <div>
+                  <div class="cv-job-title"><a href="https://lunapact.com/" target="_blank" rel="noreferrer">تكاملات Lunapact</a></div>
+                  <div class="cv-org"><a href="https://lunapact.com/" target="_blank" rel="noreferrer">https://lunapact.com/</a> · عن بعد · 2019 – 2020</div>
+                </div>
+              </div>
+              <ul>
+                <li>التنسيق عبر أربع مناطق زمنية لإطلاق ميزات ملتزمة بمتطلبات تنظيمية صارمة.</li>
+                <li>بناء واجهات برمجة غير متزامنة وطبقات تكامل تسمح للشركاء بتوسعة المنصة بأمان.</li>
+              </ul>
+            </article>
+            <article class="cv-timeline-item">
+              <div class="cv-timeline-header">
+                <div>
+                  <div class="cv-job-title"><a href="https://rouadtech.com/" target="_blank" rel="noreferrer">تحديث تجارة رواد</a></div>
+                  <div class="cv-org"><a href="https://rouadtech.com/" target="_blank" rel="noreferrer">https://rouadtech.com/</a> · دبي · 04/2021 – 07/2023</div>
+                </div>
+              </div>
+              <ul>
+                <li>مراجعة أنظمة التجارة القديمة واستبدال وحدات الدفع والمخزون الهشة بخدمات قابلة للاختبار.</li>
+                <li>تنفيذ تحسينات تجربة المستخدم والأداء التي رفعت معدلات التحويل وسرعة الصفحات.</li>
+              </ul>
+            </article>
+            <article class="cv-timeline-item">
+              <div class="cv-timeline-header">
+                <div>
+                  <div class="cv-job-title"><a href="https://hbrarabic.com/" target="_blank" rel="noreferrer">منصة هارفارد بزنس ريفيو العربية</a></div>
+                  <div class="cv-org"><a href="https://hbrarabic.com/" target="_blank" rel="noreferrer">hbrarabic.com</a> · 2022</div>
+                </div>
+              </div>
+              <ul>
+                <li>تطوير سير عمل نشر مخصص ومكونات جاهزة للتعريب لنسخة هارفارد بزنس ريفيو بالعربية.</li>
+                <li>تحسين عرض المقالات والتخزين المؤقت لضمان تحميل سريع للمحتوى التحريري الطويل.</li>
               </ul>
             </article>
           </div>
@@ -807,14 +845,6 @@
           <div class="cv-tag-grid">
             <span>HTML5</span><span>CSS3</span><span>جافاسكريبت</span><span>PHP</span><span>بايثون</span><span>جافا</span><span>جولانج</span><span>لارافيل</span><span>يي</span><span>Vue.js</span><span>React</span><span>Spring Boot</span><span>SQL/MySQL</span><span>Git</span>
           </div>
-        </section>
-        <section class="cv-card">
-          <h3>المشاريع</h3>
-          <ul class="cv-list cv-projects">
-            <li><strong>Cooplus</strong> – <a href="https://cooplus.ae/" target="_blank" rel="noreferrer">cooplus.ae</a></li>
-            <li><strong>Techno Web</strong> – <a href="https://web.techno.ae/" target="_blank" rel="noreferrer">web.techno.ae</a></li>
-            <li><strong>Lunapact</strong> – <a href="https://lunapact.com/" target="_blank" rel="noreferrer">lunapact.com</a></li>
-          </ul>
         </section>
         <section class="cv-card">
           <h3>التعليم</h3>
