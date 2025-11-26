@@ -19,10 +19,30 @@
     .date-location { font-size: 0.95rem; color: #666; }
     .links a { color: #0366d6; text-decoration: none; margin-right: 15px; }
     .links a:hover { text-decoration: underline; }
+    .lang-switch { float: right; margin-top: -10px; }
+    .lang-switch button { background: #0366d6; color: #fff; border: none; border-radius: 5px; padding: 6px 16px; margin-left: 10px; cursor: pointer; font-size: 1rem; }
+    .lang-switch button.active { background: #2c3e50; }
+    [dir="rtl"] .container { direction: rtl; text-align: right; }
+    [dir="rtl"] .header { align-items: flex-end; }
+    [dir="rtl"] .links a { margin-left: 15px; margin-right: 0; }
   </style>
+  <script>
+    function switchLang(lang) {
+      document.getElementById('cv-en').style.display = lang === 'en' ? 'block' : 'none';
+      document.getElementById('cv-ar').style.display = lang === 'ar' ? 'block' : 'none';
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+    }
+    window.onload = function() { switchLang('en'); };
+  </script>
 </head>
 <body>
-  <div class="container">
+  <div class="lang-switch">
+    <button id="btn-en" onclick="switchLang('en')">English</button>
+    <button id="btn-ar" onclick="switchLang('ar')">العربية</button>
+  </div>
+  <div id="cv-en" class="container">
     <div class="header">
       <h1>Muhammad Qanah</h1>
       <h2>Full Stack Developer</h2>
@@ -37,8 +57,8 @@
       </div>
     </div>
     <div class="section">
-  <h3>Professional Summary</h3>
-  <p>Results-driven Full Stack Developer with 8 years of experience architecting, developing, and delivering innovative software solutions for diverse industries. Adept at leading cross-functional teams, optimizing workflows, and driving projects from concept to deployment. Recognized for strong problem-solving skills, technical expertise, and a passion for continuous improvement.</p>
+      <h3>Professional Summary</h3>
+      <p>Results-driven Full Stack Developer with 8 years of experience architecting, developing, and delivering innovative software solutions for diverse industries. Adept at leading cross-functional teams, optimizing workflows, and driving projects from concept to deployment. Recognized for strong problem-solving skills, technical expertise, and a passion for continuous improvement.</p>
     </div>
     <div class="section">
       <h3>Technical Skills</h3>
@@ -118,10 +138,112 @@
       </ul>
     </div>
     <div class="section">
-  <h3>Education</h3>
-  <div><strong>Information Technology Engineering</strong></div>
-  <div>Damascus University, Damascus</div>
-  <div class="date-location">09/2015 – 07/2020</div>
+      <h3>Education</h3>
+      <div><strong>Information Technology Engineering</strong></div>
+      <div>Damascus University, Damascus</div>
+      <div class="date-location">09/2015 – 07/2020</div>
+    </div>
+  </div>
+  <div id="cv-ar" class="container" style="display:none">
+    <div class="header">
+      <h1>محمد قناعة</h1>
+      <h2>مطور برمجيات متكامل</h2>
+      <div class="contact">
+        <div>البريد الإلكتروني: muhammad.qanah.1997@gmail.com</div>
+        <div>الهاتف: +971509503511</div>
+        <div>الموقع: دبي، الإمارات العربية المتحدة</div>
+        <div class="links">
+          <a href="https://linkedin.com/in/muhammad-qanah-135a29191" target="_blank">لينكدإن</a>
+          <a href="https://github.com/Muhammad_Qa" target="_blank">جيت هب</a>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <h3>الملخص المهني</h3>
+      <p>مطور برمجيات متكامل ذو خبرة تزيد عن 8 سنوات في تصميم وتطوير وتسليم حلول برمجية مبتكرة لقطاعات متنوعة. بارع في قيادة فرق العمل متعددة التخصصات وتحسين سير العمل ودفع المشاريع من الفكرة إلى التنفيذ. معروف بمهاراته في حل المشكلات وخبرته التقنية وشغفه بالتطوير المستمر.</p>
+    </div>
+    <div class="section">
+      <h3>المهارات التقنية</h3>
+      <div class="skills">
+        <span>HTML5/CSS3</span><span>PHP</span><span>جافا</span><span>بايثون</span><span>Bootstrap</span><span>جافاسكريبت</span><span>SQL/MySQL</span><span>AJAX</span><span>Golang</span><span>لارافيل</span><span>يي</span><span>Vue.js</span><span>React</span><span>Spring Boot</span><span>Git</span><span>إدارة قواعد البيانات</span><span>الاختبار وتصحيح الأخطاء</span><span>إتاحة الويب</span><span>حلول التجارة الإلكترونية</span>
+      </div>
+    </div>
+    <div class="section">
+      <h3>اللغات</h3>
+      <div class="languages">
+        <span>العربية (اللغة الأم/ثنائي اللغة)</span>
+        <span>الإنجليزية (إتقان مهني كامل)</span>
+      </div>
+    </div>
+    <div class="section">
+      <h3>الاهتمامات المهنية</h3>
+      <div class="interests">
+        <span>هندسة البرمجيات</span>
+        <span>المنهجيات الرشيقة</span>
+        <span>حل المشكلات</span>
+        <span>تحديات البرمجة</span>
+        <span>التعلم المستمر</span>
+      </div>
+    </div>
+    <div class="section">
+      <h3>الخبرة العملية</h3>
+      <div class="job">
+        <div class="job-title">قائد فريق التطوير</div>
+        <div class="org">تكنولوجيز ذ.م.م، دبي</div>
+        <div class="date-location">03/2024 – الآن</div>
+        <ul>
+          <li>قيادة فريق متعدد التخصصات لتقديم حلول برمجية عالية الجودة وقابلة للتوسع للشركات الناشئة والمؤسسات.</li>
+          <li>تطبيق منهجيات أجايل، مما أدى إلى تحسين سرعة تسليم المشاريع وتعاون الفريق.</li>
+          <li>توجيه المطورين، مراجعة الشيفرة البرمجية، وتعزيز ثقافة التحسين المستمر.</li>
+          <li>تحويل المتطلبات التقنية إلى خطط تطوير عملية وضمان إتمام المشاريع بنجاح وفي الوقت المحدد.</li>
+        </ul>
+        <div>مرجع: عمر العواضي، +971504888841</div>
+      </div>
+      <div class="job">
+        <div class="job-title">مطور برمجيات متكامل</div>
+        <div class="org">سيتي أوف جولد، دبي</div>
+        <div class="date-location">07/2023 – 02/2024</div>
+        <ul>
+          <li>تطوير وصيانة منصة ألعاب حديثة، مما عزز تجربة المستخدم وموثوقية النظام.</li>
+          <li>التعاون مع فرق متعددة التخصصات لتقديم ميزات مبتكرة وحل التحديات التقنية المعقدة.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-title">مطور برمجيات متكامل</div>
+        <div class="org">رواد تكنولوجيز، دبي</div>
+        <div class="date-location">04/2021 – 07/2023</div>
+        <ul>
+          <li>تطوير وتحسين منصات التجارة الإلكترونية، مما مكن الشركات من أتمتة وتوسيع عملياتها عبر الإنترنت.</li>
+          <li>دمج تقنيات حديثة لتحسين أداء المنصة وأمانها وتفاعل المستخدمين.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-title">مطور برمجيات متكامل</div>
+        <div class="org">مجرة، دبي</div>
+        <div class="date-location">09/2020 – 03/2021</div>
+        <ul>
+          <li>المساهمة في تطوير منصة مجتمعية ديناميكية مع التركيز على نمو المستخدمين وتفاعلهم من خلال ميزات مبتكرة.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      <h3>العضويات المهنية</h3>
+      <ul>
+        <li><strong>تحالف مطوري الويب الوطني (NWDA)</strong> (2015 – الآن): عضو نشط يشارك في ورش عمل حول أحدث اتجاهات تطوير الويب.</li>
+        <li><strong>جمعية الحوسبة الآلية (ACM)</strong> (2016 – 2020): المشاركة في فعاليات الفروع المحلية والندوات التقنية.</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h3>الشهادات</h3>
+      <ul>
+        <li><strong>بكالوريوس في هندسة تقانة المعلومات</strong>، جامعة دمشق (2015 – 2020)</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h3>التعليم</h3>
+      <div><strong>هندسة تقانة المعلومات</strong></div>
+      <div>جامعة دمشق، دمشق</div>
+      <div class="date-location">09/2015 – 07/2020</div>
     </div>
   </div>
 </body>
