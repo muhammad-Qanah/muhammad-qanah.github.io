@@ -3,167 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad Qanah - CV</title>
+  <title>Professional CV - Muhammad Qanah</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-      display: flex;
-      flex-direction: row;
-      overflow: hidden;
-    }
-    .sidebar {
-      background: #2c3e50;
-      color: #fff;
-      width: 320px;
-      min-width: 260px;
-      padding: 40px 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 30px;
-    }
-    .sidebar h1 {
-      font-size: 2.2rem;
-      margin: 0 0 8px 0;
-      color: #fff;
-    }
-    .sidebar h2 {
-      font-size: 1.2rem;
-      font-weight: 400;
-      margin: 0 0 18px 0;
-      color: #b0c4d6;
-    }
-    .sidebar .contact, .sidebar .links {
-      font-size: 1rem;
-      color: #e1ecf4;
-    }
-    .sidebar .links a {
-      color: #e1ecf4;
-      text-decoration: none;
-      margin-right: 12px;
-    }
-    .sidebar .links a:hover {
-      text-decoration: underline;
-    }
-    .sidebar .skills, .sidebar .languages {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .sidebar .skills span, .sidebar .languages span {
-      background: #34495e;
-      color: #fff;
-      padding: 5px 12px;
-      border-radius: 16px;
-      font-size: 0.95rem;
-    }
-    .main-content {
-      flex: 1;
-      padding: 40px 50px;
-      background: #fff;
-    }
-    h3 {
-      color: #2c3e50;
-      margin-top: 0;
-      margin-bottom: 10px;
-      border-left: 4px solid #0366d6;
-      padding-left: 10px;
-      font-size: 1.2rem;
-    }
-    .section {
-      margin-bottom: 32px;
-    }
-    .interests {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .interests span {
-      background: #e1ecf4;
-      color: #0366d6;
-      padding: 5px 12px;
-      border-radius: 16px;
-      font-size: 0.95rem;
-    }
-    .job {
-      margin-bottom: 22px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #f0f0f0;
-    }
-    .job:last-child {
-      border-bottom: none;
-    }
-    .job-title {
-      font-weight: bold;
-      font-size: 1.08rem;
-      color: #0366d6;
-    }
-    .org {
-      color: #888;
-      font-size: 1rem;
-    }
-    .date-location {
-      font-size: 0.97rem;
-      color: #666;
-      margin-bottom: 6px;
-    }
-    .lang-switch {
-      position: absolute;
-      top: 30px;
-      right: 50px;
-      z-index: 10;
-    }
-    .lang-switch button {
-      background: #0366d6;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      padding: 6px 16px;
-      margin-left: 10px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.2s;
-    }
-    .lang-switch button.active {
-      background: #2c3e50;
-    }
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f7f9fa; }
+    .cv-container { max-width: 1050px; margin: 32px auto; background: #fff; border-radius: 14px; box-shadow: 0 4px 24px rgba(0,0,0,0.09); display: flex; overflow: hidden; }
+    .cv-sidebar { background: #232946; color: #fff; width: 320px; min-width: 260px; padding: 32px 24px; display: flex; flex-direction: column; gap: 28px; }
+    .cv-sidebar h1 { font-size: 2.1rem; margin: 0 0 8px 0; color: #fff; }
+    .cv-sidebar h2 { font-size: 1.1rem; font-weight: 400; margin: 0 0 18px 0; color: #b8c1ec; }
+    .cv-sidebar .cv-contact, .cv-sidebar .cv-links { font-size: 1rem; color: #eebbc3; }
+    .cv-sidebar .cv-links a { color: #eebbc3; text-decoration: none; margin-right: 12px; }
+    .cv-sidebar .cv-links a:hover { text-decoration: underline; }
+    .cv-sidebar .cv-section-title { color: #eebbc3; font-size: 1.08rem; margin-bottom: 8px; margin-top: 0; }
+    .cv-sidebar ul { padding-left: 18px; margin: 0; }
+    .cv-sidebar li { margin-bottom: 7px; font-size: 0.98rem; }
+    .cv-sidebar .cv-skills, .cv-sidebar .cv-languages { display: flex; flex-wrap: wrap; gap: 8px; }
+    .cv-sidebar .cv-skills span, .cv-sidebar .cv-languages span { background: #393e6a; color: #fff; padding: 5px 12px; border-radius: 16px; font-size: 0.95rem; }
+    .cv-main { flex: 1; padding: 36px 40px 36px 40px; background: #fff; }
+    .cv-main h3 { color: #232946; margin-top: 0; margin-bottom: 10px; border-left: 4px solid #eebbc3; padding-left: 10px; font-size: 1.18rem; }
+    .cv-section { margin-bottom: 34px; }
+    .cv-job { margin-bottom: 22px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0; }
+    .cv-job:last-child { border-bottom: none; }
+    .cv-job-title { font-weight: bold; font-size: 1.08rem; color: #232946; }
+    .cv-org { color: #888; font-size: 1rem; }
+    .cv-date-location { font-size: 0.97rem; color: #666; margin-bottom: 6px; }
+    .cv-lang-switch { position: absolute; top: 32px; right: 50px; z-index: 10; }
+    .cv-lang-switch button { background: #eebbc3; color: #232946; border: none; border-radius: 5px; padding: 6px 16px; margin-left: 10px; cursor: pointer; font-size: 1rem; transition: background 0.2s; }
+    .cv-lang-switch button.active { background: #232946; color: #fff; }
     @media (max-width: 900px) {
-      .container {
-        flex-direction: column;
-      }
-      .sidebar {
-        width: 100%;
-        min-width: unset;
-        align-items: flex-start;
-      }
-      .main-content {
-        padding: 30px 16px;
-      }
-      .lang-switch {
-        right: 16px;
-        top: 16px;
-      }
+      .cv-container { flex-direction: column; }
+      .cv-sidebar { width: 100%; min-width: unset; align-items: flex-start; }
+      .cv-main { padding: 30px 16px; }
+      .cv-lang-switch { right: 16px; top: 16px; }
     }
-    [dir="rtl"] .container { direction: rtl; text-align: right; }
-    [dir="rtl"] .sidebar { align-items: flex-end; }
-    [dir="rtl"] .sidebar .links a { margin-left: 12px; margin-right: 0; }
-    [dir="rtl"] .main-content { text-align: right; }
-    [dir="rtl"] h3 { border-left: none; border-right: 4px solid #0366d6; padding-left: 0; padding-right: 10px; }
+  [dir="rtl"] .cv-container { direction: rtl; text-align: right; }
+  [dir="rtl"] .cv-sidebar { align-items: flex-end; text-align: right; }
+  [dir="rtl"] .cv-sidebar .cv-section-title { text-align: right; width: 100%; }
+  [dir="rtl"] .cv-sidebar ul { padding-right: 18px; padding-left: 0; }
+  [dir="rtl"] .cv-sidebar .cv-links { text-align: right; width: 100%; }
+  [dir="rtl"] .cv-sidebar .cv-links a { margin-left: 12px; margin-right: 0; display: inline-block; }
+  [dir="rtl"] .cv-sidebar .cv-skills, [dir="rtl"] .cv-sidebar .cv-languages { justify-content: flex-end; }
+  [dir="rtl"] .cv-main { text-align: right; }
+  [dir="rtl"] .cv-main h3 { border-left: none; border-right: 4px solid #eebbc3; padding-left: 0; padding-right: 10px; }
   </style>
   <script>
     function switchLang(lang) {
-      document.getElementById('cv-en').style.display = lang === 'en' ? 'block' : 'none';
-      document.getElementById('cv-ar').style.display = lang === 'ar' ? 'block' : 'none';
+      document.getElementById('cv-en').style.display = lang === 'en' ? 'flex' : 'none';
+      document.getElementById('cv-ar').style.display = lang === 'ar' ? 'flex' : 'none';
       document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
@@ -172,253 +57,253 @@
   </script>
 </head>
 <body>
-  <div class="lang-switch">
+  <div class="cv-lang-switch">
     <button id="btn-en" onclick="switchLang('en')">English</button>
     <button id="btn-ar" onclick="switchLang('ar')">العربية</button>
   </div>
-  <div id="cv-en" class="container">
-    <div class="sidebar">
+  <div id="cv-en" class="cv-container">
+    <div class="cv-sidebar">
       <h1>Muhammad Qanah</h1>
-      <h2>Full Stack Developer</h2>
-      <div class="contact">
+      <h2>Full Stack Software Engineer</h2>
+      <div class="cv-contact">
         <div>Email: muhammad.qanah.1997@gmail.com</div>
         <div>Phone: +971509503511</div>
-        <div>Location: Dubai, United Arab Emirates</div>
+        <div>Location: Dubai, UAE</div>
       </div>
-      <div class="links">
+      <div class="cv-links">
         <a href="https://linkedin.com/in/muhammad-qanah-135a29191" target="_blank">LinkedIn</a>
         <a href="https://github.com/Muhammad_Qa" target="_blank">GitHub</a>
       </div>
       <div>
-        <h3>Skills</h3>
-        <div class="skills">
-          <span>HTML5/CSS3</span><span>PHP</span><span>Java</span><span>Python</span><span>Bootstrap</span><span>JavaScript</span><span>SQL/MySQL</span><span>AJAX</span><span>Golang</span><span>Laravel</span><span>Yii</span><span>Vue.js</span><span>React</span><span>Spring Boot</span><span>Git</span><span>Database Management</span><span>Testing & Debugging</span><span>Web Accessibility</span><span>E-commerce Solutions</span>
+        <div class="cv-section-title">Skills</div>
+        <div class="cv-skills">
+          <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span><span>Python</span><span>Java</span><span>Golang</span><span>Laravel</span><span>Yii</span><span>Vue.js</span><span>React</span><span>Spring Boot</span><span>SQL/MySQL</span><span>Git</span>
         </div>
       </div>
       <div>
-        <h3>Languages</h3>
-        <div class="languages">
-          <span>Arabic (Native/Bilingual)</span>
-          <span>English (Full Professional Proficiency)</span>
+        <div class="cv-section-title">Languages</div>
+        <div class="cv-languages">
+          <span>Arabic (Native)</span>
+          <span>English (Professional)</span>
         </div>
       </div>
-    </div>
-    <div class="main-content">
-      <div class="section">
-        <h3>About Me</h3>
-        <p>I’m a passionate Full Stack Developer with 8 years of hands-on experience building web applications and business solutions. I enjoy working with teams to solve real problems, and I’m always looking for ways to make code cleaner and products better. I believe in learning by doing, and I love seeing my work help people and businesses grow.</p>
-      </div>
-      <div class="section">
-        <h3>Interests</h3>
-        <div class="interests">
-          <span>Building useful products</span>
-          <span>Teamwork</span>
-          <span>Learning new tech</span>
-          <span>Solving tough problems</span>
-          <span>Helping others grow</span>
-        </div>
-      </div>
-      <div class="section">
-        <h3>Work Experience</h3>
-        <div class="job">
-          <div class="job-title">Lead Developer</div>
-          <div class="org">Technologies LLC, Dubai</div>
-          <div class="date-location">03/2024 – Present</div>
-          <ul>
-            <li>I lead a talented team building custom software for startups and big companies. I help break down complex ideas into simple tasks, review code, and make sure we deliver on time. I enjoy mentoring junior developers and seeing the team succeed together.</li>
-          </ul>
-          <div>Reference: Omar Alawadi, +971504888841</div>
-        </div>
-        <div class="job">
-          <div class="job-title">Full Stack Developer</div>
-          <div class="org">City Of Gold, Dubai</div>
-          <div class="date-location">07/2023 – 02/2024</div>
-          <ul>
-            <li>I worked on a gaming platform, making sure users had a smooth experience and fixing issues as they came up. I collaborated with designers and other developers to launch new features quickly.</li>
-          </ul>
-        </div>
-        <div class="job">
-          <div class="job-title">Full Stack Developer</div>
-          <div class="org">Rouad Technologies, Dubai</div>
-          <div class="date-location">04/2021 – 07/2023</div>
-          <ul>
-            <li>I helped build and improve e-commerce sites for different businesses. My focus was on making the sites fast, secure, and easy to use for everyone.</li>
-          </ul>
-        </div>
-        <div class="job">
-          <div class="job-title">Full Stack Developer</div>
-          <div class="org"><a href="https://cooplus.ae/" target="_blank">Cooplus</a>, Dubai</div>
-          <div class="date-location">2021 – Present</div>
-          <ul>
-            <li>I build and maintain the backend using Laravel and the frontend using Vue.js with Nuxt. I work closely with the team to deliver new features and keep the platform running smoothly for users and partners.</li>
-          </ul>
-        </div>
-        <div class="job">
-          <div class="job-title">Full Stack Developer</div>
-          <div class="org"><a href="https://web.techno.ae/" target="_blank">Techno Web</a>, Dubai</div>
-          <div class="date-location">2020 – 2021</div>
-          <ul>
-            <li>I developed and supported web solutions for clients, focusing on performance, security, and user experience. I collaborated with designers and project managers to deliver projects on time and to client specifications.</li>
-          </ul>
-        </div>
-        <div class="job">
-          <div class="job-title">Full Stack Developer</div>
-          <div class="org"><a href="https://lunapact.com/" target="_blank">Lunapact</a>, Remote</div>
-          <div class="date-location">2019 – 2020</div>
-          <ul>
-            <li>I worked remotely with an international team to build and launch new features for the Lunapact platform. My focus was on backend APIs and integrating third-party services to improve the product.</li>
-          </ul>
-        </div>
-        <div class="job">
-          <div class="job-title">Full Stack Developer</div>
-          <div class="org">Majarra, Dubai</div>
-          <div class="date-location">09/2020 – 03/2021</div>
-          <ul>
-            <li>I contributed to a growing online community, adding features that helped users connect and learn from each other.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="section">
-        <h3>Memberships</h3>
+      <div>
+        <div class="cv-section-title">Projects</div>
         <ul>
-          <li><strong>National Web Developers Alliance (NWDA)</strong> (2015 – Present): I regularly join workshops and discussions about new trends in web development.</li>
-          <li><strong>Association for Computing Machinery (ACM)</strong> (2016 – 2020): I participated in local events and learned from other tech professionals.</li>
+          <li><strong>Cooplus</strong> – <a href="https://cooplus.ae/" target="_blank" style="color:#eebbc3;">cooplus.ae</a></li>
+          <li><strong>Techno Web</strong> – <a href="https://web.techno.ae/" target="_blank" style="color:#eebbc3;">web.techno.ae</a></li>
+          <li><strong>Lunapact</strong> – <a href="https://lunapact.com/" target="_blank" style="color:#eebbc3;">lunapact.com</a></li>
         </ul>
       </div>
-      <div class="section">
+    </div>
+    <div class="cv-main">
+      <div class="cv-section">
+        <h3>Profile</h3>
+        <p>Results-driven Full Stack Software Engineer with 8+ years of experience designing, developing, and deploying scalable web applications. Adept at collaborating with cross-functional teams, mentoring junior developers, and delivering high-quality solutions on time. Passionate about clean code, modern technologies, and continuous learning.</p>
+      </div>
+      <div class="cv-section">
+        <h3>Work Experience</h3>
+        <div class="cv-job">
+          <div class="cv-job-title">Lead Developer</div>
+          <div class="cv-org">Technologies LLC, Dubai</div>
+          <div class="cv-date-location">03/2024 – Present</div>
+          <ul>
+            <li>Lead a team to deliver custom software for startups and enterprises, ensuring timely and quality releases.</li>
+            <li>Mentor junior developers and foster a collaborative team environment.</li>
+            <li>Architect and review code for maintainability and scalability.</li>
+          </ul>
+        </div>
+        <div class="cv-job">
+          <div class="cv-job-title">Full Stack Developer</div>
+          <div class="cv-org">Cooplus, Dubai</div>
+          <div class="cv-date-location">2021 – Present</div>
+          <ul>
+            <li>Developed and maintained backend (Laravel) and frontend (Vue.js/Nuxt) for a leading business platform.</li>
+            <li>Collaborated with product and design teams to deliver new features and enhancements.</li>
+            <li>Optimized application performance and ensured platform stability.</li>
+          </ul>
+        </div>
+        <div class="cv-job">
+          <div class="cv-job-title">Full Stack Developer</div>
+          <div class="cv-org">Techno Web, Dubai</div>
+          <div class="cv-date-location">2020 – 2021</div>
+          <ul>
+            <li>Built and supported web solutions for diverse clients using PHP, Yii, and Vue.js.</li>
+            <li>Focused on security, performance, and user experience.</li>
+            <li>Worked closely with designers and project managers to meet client requirements.</li>
+          </ul>
+        </div>
+        <div class="cv-job">
+          <div class="cv-job-title">Full Stack Developer</div>
+          <div class="cv-org">Lunapact, Remote</div>
+          <div class="cv-date-location">2019 – 2020</div>
+          <ul>
+            <li>Worked with an international team to develop and launch new features for the Lunapact platform.</li>
+            <li>Focused on backend APIs and third-party integrations.</li>
+          </ul>
+        </div>
+        <div class="cv-job">
+          <div class="cv-job-title">Full Stack Developer</div>
+          <div class="cv-org">Rouad Technologies, Dubai</div>
+          <div class="cv-date-location">04/2021 – 07/2023</div>
+          <ul>
+            <li>Improved and maintained e-commerce sites for multiple businesses.</li>
+            <li>Ensured fast, secure, and user-friendly web experiences.</li>
+          </ul>
+        </div>
+        <div class="cv-job">
+          <div class="cv-job-title">Full Stack Developer</div>
+          <div class="cv-org">City Of Gold, Dubai</div>
+          <div class="cv-date-location">07/2023 – 02/2024</div>
+          <ul>
+            <li>Developed features and resolved issues for a gaming platform.</li>
+            <li>Collaborated with designers and developers for rapid feature delivery.</li>
+          </ul>
+        </div>
+        <div class="cv-job">
+          <div class="cv-job-title">Full Stack Developer</div>
+          <div class="cv-org">Majarra, Dubai</div>
+          <div class="cv-date-location">09/2020 – 03/2021</div>
+          <ul>
+            <li>Contributed to an online community platform, adding features to enhance user engagement.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cv-section">
         <h3>Education</h3>
         <ul>
           <li><strong>BSc in Information Technology Engineering</strong>, Damascus University (2015 – 2020)</li>
         </ul>
       </div>
-      <div class="section">
-        <h3>More About My Education</h3>
-        <div><strong>Information Technology Engineering</strong></div>
-        <div>Damascus University, Damascus</div>
-        <div class="date-location">09/2015 – 07/2020</div>
+      <div class="cv-section">
+        <h3>Memberships</h3>
+        <ul>
+          <li><strong>National Web Developers Alliance (NWDA)</strong> (2015 – Present): Active participant in workshops and discussions on web development trends.</li>
+          <li><strong>Association for Computing Machinery (ACM)</strong> (2016 – 2020): Engaged in local events and professional networking.</li>
+        </ul>
       </div>
     </div>
   </div>
-  <div id="cv-ar" class="container" style="display:none" dir="rtl">
-    <div class="sidebar">
-      <h1>محمد قناه</h1>
-      <h2>مطور برمجيات متكامل</h2>
-      <div class="contact">
+  <div id="cv-ar" class="cv-container" style="display:none" dir="rtl">
+    <div class="cv-sidebar">
+      <h1 dir="rtl" style="font-family: 'Cairo', 'Tajawal', 'Amiri', 'Segoe UI', Arial, sans-serif; letter-spacing:0.5px;">محمد قناه</h1>
+      <h2>مهندس برمجيات متكامل</h2>
+      <div class="cv-contact">
         <div>البريد الإلكتروني: muhammad.qanah.1997@gmail.com</div>
         <div>الهاتف: +971509503511</div>
         <div>الموقع: دبي، الإمارات العربية المتحدة</div>
       </div>
-      <div class="links">
+      <div class="cv-links">
         <a href="https://linkedin.com/in/muhammad-qanah-135a29191" target="_blank">لينكدإن</a>
         <a href="https://github.com/Muhammad_Qa" target="_blank">جيت هب</a>
       </div>
       <div>
-        <h3>المهارات</h3>
-        <div class="skills">
-          <span>HTML5/CSS3</span><span>PHP</span><span>جافا</span><span>بايثون</span><span>Bootstrap</span><span>جافاسكريبت</span><span>SQL/MySQL</span><span>AJAX</span><span>Golang</span><span>لارافيل</span><span>يي</span><span>Vue.js</span><span>React</span><span>Spring Boot</span><span>Git</span><span>إدارة قواعد البيانات</span><span>الاختبار وتصحيح الأخطاء</span><span>إتاحة الويب</span><span>حلول التجارة الإلكترونية</span>
+        <div class="cv-section-title">المهارات</div>
+        <div class="cv-skills">
+          <span>HTML5</span><span>CSS3</span><span>جافاسكريبت</span><span>PHP</span><span>بايثون</span><span>جافا</span><span>جولانج</span><span>لارافيل</span><span>يي</span><span>Vue.js</span><span>React</span><span>Spring Boot</span><span>SQL/MySQL</span><span>Git</span>
         </div>
       </div>
       <div>
-        <h3>اللغات</h3>
-        <div class="languages">
-          <span>العربية (اللغة الأم/ثنائي اللغة)</span>
-          <span>الإنجليزية (إتقان مهني كامل)</span>
+        <div class="cv-section-title">اللغات</div>
+        <div class="cv-languages">
+          <span>العربية (اللغة الأم)</span>
+          <span>الإنجليزية (مهني)</span>
         </div>
       </div>
-    </div>
-    <div class="main-content">
-      <div class="section">
-        <h3>نبذة عني</h3>
-        <p>أنا مطور برمجيات متكامل أعمل في هذا المجال منذ 8 سنوات. أحب بناء تطبيقات ويب عملية تساعد الناس والشركات على تحقيق أهدافهم. أستمتع بالعمل مع الفريق وحل المشكلات البرمجية، وأسعى دائمًا لتعلم كل جديد في عالم التقنية.</p>
-      </div>
-      <div class="section">
-        <h3>الاهتمامات</h3>
-        <div class="interests">
-          <span>بناء منتجات مفيدة</span>
-          <span>العمل الجماعي</span>
-          <span>تعلم تقنيات جديدة</span>
-          <span>حل المشكلات الصعبة</span>
-          <span>مساعدة الآخرين على التطور</span>
-        </div>
-      </div>
-      <div class="section">
-        <h3>الخبرة العملية</h3>
-        <div class="job">
-          <div class="job-title">قائد فريق التطوير</div>
-          <div class="org">تكنولوجيز ذ.م.م، دبي</div>
-          <div class="date-location">03/2024 – الآن</div>
-          <ul>
-            <li>أقود فريقًا مميزًا لبناء برامج مخصصة للشركات الناشئة والكبيرة. أساعد في تبسيط الأفكار المعقدة إلى مهام واضحة، أراجع الشيفرة البرمجية، وأحرص على تسليم المشاريع في الوقت المناسب. أحب تدريب المطورين الجدد ورؤية نجاح الفريق معًا.</li>
-          </ul>
-          <div>مرجع: عمر العواضي، +971504888841</div>
-        </div>
-        <div class="job">
-          <div class="job-title">مطور برمجيات متكامل</div>
-          <div class="org">سيتي أوف جولد، دبي</div>
-          <div class="date-location">07/2023 – 02/2024</div>
-          <ul>
-            <li>عملت على منصة ألعاب إلكترونية، وحرصت على أن تكون تجربة المستخدم سلسة وحللت المشاكل فور ظهورها. تعاونت مع المصممين والمطورين لإطلاق ميزات جديدة بسرعة.</li>
-          </ul>
-        </div>
-        <div class="job">
-          <div class="job-title">مطور برمجيات متكامل</div>
-          <div class="org">رواد تكنولوجيز، دبي</div>
-          <div class="date-location">04/2021 – 07/2023</div>
-          <ul>
-            <li>ساهمت في بناء وتطوير مواقع تجارة إلكترونية لعدة شركات. كان تركيزي على جعل المواقع سريعة وآمنة وسهلة الاستخدام للجميع.</li>
-          </ul>
-        </div>
-        <div class="job">
-          <div class="job-title">مطور برمجيات متكامل</div>
-          <div class="org"><a href="https://cooplus.ae/" target="_blank">Cooplus</a>، دبي</div>
-          <div class="date-location">2021 – الآن</div>
-          <ul>
-            <li>أقوم بتطوير وصيانة الواجهة الخلفية باستخدام Laravel والواجهة الأمامية باستخدام Vue.js مع Nuxt. أعمل مع الفريق لإطلاق ميزات جديدة وضمان استقرار المنصة للمستخدمين والشركاء.</li>
-          </ul>
-        </div>
-        <div class="job">
-          <div class="job-title">مطور برمجيات متكامل</div>
-          <div class="org"><a href="https://web.techno.ae/" target="_blank">Techno Web</a>، دبي</div>
-          <div class="date-location">2020 – 2021</div>
-          <ul>
-            <li>قمت بتطوير ودعم حلول ويب لعملاء مختلفين مع التركيز على الأداء والأمان وتجربة المستخدم. تعاونت مع المصممين ومديري المشاريع لتسليم المشاريع في الوقت المحدد ووفق متطلبات العميل.</li>
-          </ul>
-        </div>
-        <div class="job">
-          <div class="job-title">مطور برمجيات متكامل</div>
-          <div class="org"><a href="https://lunapact.com/" target="_blank">Lunapact</a>، عن بعد</div>
-          <div class="date-location">2019 – 2020</div>
-          <ul>
-            <li>عملت عن بعد مع فريق دولي لبناء وإطلاق ميزات جديدة لمنصة Lunapact. ركزت على تطوير واجهات برمجة التطبيقات الخلفية ودمج خدمات خارجية لتحسين المنتج.</li>
-          </ul>
-        </div>
-        <div class="job">
-          <div class="job-title">مطور برمجيات متكامل</div>
-          <div class="org">مجرة، دبي</div>
-          <div class="date-location">09/2020 – 03/2021</div>
-          <ul>
-            <li>ساهمت في تطوير مجتمع إلكتروني متنامٍ، وأضفت ميزات تساعد المستخدمين على التواصل والتعلم من بعضهم البعض.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="section">
-        <h3>العضويات</h3>
+      <div>
+        <div class="cv-section-title">المشاريع</div>
         <ul>
-          <li><strong>تحالف مطوري الويب الوطني (NWDA)</strong> (2015 – الآن): أشارك بانتظام في ورش العمل والنقاشات حول أحدث اتجاهات تطوير الويب.</li>
-          <li><strong>جمعية الحوسبة الآلية (ACM)</strong> (2016 – 2020): شاركت في فعاليات محلية وتعلمت من خبرات مطورين آخرين.</li>
+          <li><strong>Cooplus</strong> – <a href="https://cooplus.ae/" target="_blank" style="color:#eebbc3;">cooplus.ae</a></li>
+          <li><strong>Techno Web</strong> – <a href="https://web.techno.ae/" target="_blank" style="color:#eebbc3;">web.techno.ae</a></li>
+          <li><strong>Lunapact</strong> – <a href="https://lunapact.com/" target="_blank" style="color:#eebbc3;">lunapact.com</a></li>
         </ul>
       </div>
-      <div class="section">
+    </div>
+    <div class="cv-main">
+      <div class="cv-section">
+        <h3>الملف الشخصي</h3>
+        <p>مهندس برمجيات متكامل بخبرة تزيد عن 8 سنوات في تصميم وتطوير ونشر تطبيقات الويب القابلة للتوسع. بارع في التعاون مع فرق متعددة التخصصات وتوجيه المطورين الجدد وتقديم حلول عالية الجودة في الوقت المحدد. شغوف بكتابة كود نظيف واستخدام أحدث التقنيات والتعلم المستمر.</p>
+      </div>
+      <div class="cv-section">
+        <h3>الخبرة العملية</h3>
+        <div class="cv-job">
+          <div class="cv-job-title">قائد فريق التطوير</div>
+          <div class="cv-org">تكنولوجيز ذ.م.م، دبي</div>
+          <div class="cv-date-location">03/2024 – الآن</div>
+          <ul>
+            <li>قيادة فريق لتسليم برامج مخصصة للشركات الناشئة والكبيرة مع ضمان الجودة والالتزام بالمواعيد.</li>
+            <li>توجيه المطورين الجدد وتعزيز بيئة عمل تعاونية.</li>
+            <li>تصميم ومراجعة الشيفرة لضمان القابلية للصيانة والتوسع.</li>
+          </ul>
+        </div>
+        <div class="cv-job">
+          <div class="cv-job-title">مطور برمجيات متكامل</div>
+          <div class="cv-org">Cooplus، دبي</div>
+          <div class="cv-date-location">2021 – الآن</div>
+          <ul>
+            <li>تطوير وصيانة الواجهة الخلفية (Laravel) والواجهة الأمامية (Vue.js/Nuxt) لمنصة أعمال رائدة.</li>
+            <li>التعاون مع فرق المنتج والتصميم لإطلاق ميزات وتحسينات جديدة.</li>
+            <li>تحسين أداء التطبيق وضمان استقرار المنصة.</li>
+          </ul>
+        </div>
+        <div class="cv-job">
+          <div class="cv-job-title">مطور برمجيات متكامل</div>
+          <div class="cv-org">Techno Web، دبي</div>
+          <div class="cv-date-location">2020 – 2021</div>
+          <ul>
+            <li>بناء ودعم حلول ويب لعملاء متنوعين باستخدام PHP وYii وVue.js.</li>
+            <li>التركيز على الأمان والأداء وتجربة المستخدم.</li>
+            <li>العمل مع المصممين ومديري المشاريع لتلبية متطلبات العملاء.</li>
+          </ul>
+        </div>
+        <div class="cv-job">
+          <div class="cv-job-title">مطور برمجيات متكامل</div>
+          <div class="cv-org">Lunapact، عن بعد</div>
+          <div class="cv-date-location">2019 – 2020</div>
+          <ul>
+            <li>العمل مع فريق دولي لتطوير وإطلاق ميزات جديدة لمنصة Lunapact.</li>
+            <li>التركيز على واجهات برمجة التطبيقات الخلفية والتكامل مع خدمات خارجية.</li>
+          </ul>
+        </div>
+        <div class="cv-job">
+          <div class="cv-job-title">مطور برمجيات متكامل</div>
+          <div class="cv-org">رواد تكنولوجيز، دبي</div>
+          <div class="cv-date-location">04/2021 – 07/2023</div>
+          <ul>
+            <li>تحسين وصيانة مواقع التجارة الإلكترونية لعدة شركات.</li>
+            <li>ضمان تجربة ويب سريعة وآمنة وسهلة الاستخدام.</li>
+          </ul>
+        </div>
+        <div class="cv-job">
+          <div class="cv-job-title">مطور برمجيات متكامل</div>
+          <div class="cv-org">سيتي أوف جولد، دبي</div>
+          <div class="cv-date-location">07/2023 – 02/2024</div>
+          <ul>
+            <li>تطوير ميزات وحل مشاكل لمنصة ألعاب إلكترونية.</li>
+            <li>التعاون مع المصممين والمطورين لإطلاق الميزات بسرعة.</li>
+          </ul>
+        </div>
+        <div class="cv-job">
+          <div class="cv-job-title">مطور برمجيات متكامل</div>
+          <div class="cv-org">مجرة، دبي</div>
+          <div class="cv-date-location">09/2020 – 03/2021</div>
+          <ul>
+            <li>المساهمة في تطوير منصة مجتمع إلكتروني وإضافة ميزات لتعزيز تفاعل المستخدمين.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cv-section">
         <h3>التعليم</h3>
         <ul>
           <li><strong>بكالوريوس في هندسة تقانة المعلومات</strong>، جامعة دمشق (2015 – 2020)</li>
         </ul>
       </div>
-      <div class="section">
-        <h3>معلومات إضافية عن تعليمي</h3>
-        <div><strong>هندسة تقانة المعلومات</strong></div>
-        <div>جامعة دمشق، دمشق</div>
-        <div class="date-location">09/2015 – 07/2020</div>
+      <div class="cv-section">
+        <h3>العضويات</h3>
+        <ul>
+          <li><strong>تحالف مطوري الويب الوطني (NWDA)</strong> (2015 – الآن): المشاركة في ورش العمل والنقاشات حول أحدث اتجاهات تطوير الويب.</li>
+          <li><strong>جمعية الحوسبة الآلية (ACM)</strong> (2016 – 2020): المشاركة في فعاليات محلية وبناء علاقات مهنية.</li>
+        </ul>
       </div>
     </div>
   </div>
