@@ -84,34 +84,9 @@
       max-width: 1100px;
       margin: 0 auto 18px;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       gap: 16px;
       flex-wrap: wrap;
-    }
-    .cv-lang-switch {
-      display: inline-flex;
-      gap: 0;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 4px;
-      background: var(--button-bg);
-      box-shadow: 0 6px 18px rgba(35, 41, 70, 0.12);
-    }
-    .cv-lang-switch button {
-      background: transparent;
-      border: none;
-      border-radius: 999px;
-      padding: 8px 20px;
-      cursor: pointer;
-      font-size: 1rem;
-      color: var(--button-text);
-      transition: all 0.2s ease;
-    }
-    .cv-lang-switch button:hover { transform: translateY(-1px); }
-    .cv-lang-switch button.active {
-      background: var(--button-active-bg);
-      color: var(--button-active-text);
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.08);
     }
     .cv-theme-toggle {
       background: var(--button-bg);
@@ -356,20 +331,6 @@
       body { padding: 20px 12px 32px; }
       .cv-hero { padding: 28px; }
     }
-    [dir="rtl"] .cv-lang-switch { justify-content: flex-start; }
-    [dir="rtl"] .cv-hero { flex-direction: row-reverse; text-align: right; }
-    [dir="rtl"] .cv-hero-meta { justify-content: flex-start; }
-    [dir="rtl"] .cv-contact-grid { direction: rtl; }
-    [dir="rtl"] .cv-layout { direction: rtl; }
-    [dir="rtl"] .cv-card h3 { letter-spacing: 0.1em; }
-    [dir="rtl"] .cv-timeline-item {
-      border-left: none;
-      border-right: 2px solid var(--timeline-border);
-      padding-left: 0;
-      padding-right: 18px;
-    }
-    [dir="rtl"] .cv-timeline-item::before { left: auto; right: -7px; }
-    [dir="rtl"] .cv-timeline-item ul { padding-left: 0; padding-right: 18px; }
     @media print {
       @page { size: auto; margin: 0; }
       html, body {
@@ -435,28 +396,13 @@
       localStorage.setItem(THEME_KEY, next);
       applyTheme(next);
     }
-    function switchLang(lang) {
-      document.getElementById('cv-en').style.display = lang === 'en' ? 'block' : 'none';
-      document.getElementById('cv-ar').style.display = lang === 'ar' ? 'block' : 'none';
-      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-      document.documentElement.lang = lang;
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-      document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
-      document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
-      document.getElementById('btn-ar').setAttribute('aria-pressed', lang === 'ar' ? 'true' : 'false');
-    }
     window.onload = function() {
       initTheme();
-      switchLang('en');
     };
   </script>
 </head>
 <body>
   <div class="cv-toolbar">
-    <div class="cv-lang-switch">
-      <button id="btn-en" type="button" aria-pressed="true" onclick="switchLang('en')">English</button>
-      <button id="btn-ar" type="button" aria-pressed="false" onclick="switchLang('ar')">العربية</button>
-    </div>
     <button id="btn-theme" class="cv-theme-toggle" type="button" aria-pressed="false" onclick="toggleTheme()">Dark Mode</button>
   </div>
 
@@ -694,8 +640,9 @@
       </aside>
     </div>
   </div>
+</body>
+</html>
 
-  <div id="cv-ar" class="cv-page" dir="rtl">
     <section class="cv-hero">
       <div class="cv-avatar">
         <img src="IMG_6888.jpeg" alt="محمد قناه">
